@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import data from './data';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -31,7 +31,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div class="text-center">All rights reserved</div>
+          <div className="text-center">All rights reserved</div>
         </footer>
       </div>
     </BrowserRouter>
