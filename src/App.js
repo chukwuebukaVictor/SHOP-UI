@@ -22,7 +22,7 @@ function App() {
           </Navbar>
           {/* <Link to="/">Ikoyi-Mall</Link> */}
         </header>
-        <main>
+        <main className="mt-3">
           <Container>
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
