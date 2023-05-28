@@ -57,3 +57,7 @@ main {
   width: 100%;
   max-width: 25rem;
 } */
+
+.img-thumbnail {
+  height: 80px;
+}
