@@ -1,14 +1,20 @@
 // import logo from './logo.svg';
 // import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 // import data from './data';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
+import { useContext } from 'react';
+import { Store } from './Store';
 
 function App() {
+  const { state } = useContext(Store);
+  const { cart } = state;
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -18,6 +24,17 @@ function App() {
               <LinkContainer to="/">
                 <Navbar.Brand>Ikoyi-Mall</Navbar.Brand>
               </LinkContainer>
+              <Nav className="me-auto">
+                <Link to="/cart" className="nav-link">
+                  cart
+                  {cart.cartItems.length > 0 && (
+                    <Badge pill bg="danger">
+                      {/* {cart.cartItems.reduce((a, c) => a + c.quantity, 0)} */}
+                      {cart.cartItems.length}
+                    </Badge>
+                  )}
+                </Link>
+              </Nav>
             </Container>
           </Navbar>
           {/* <Link to="/">Ikoyi-Mall</Link> */}
